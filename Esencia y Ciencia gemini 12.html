@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esencia y Ciencia - Salud y Bienestar Natural</title>
+    <style>
+        /* --- Estilos Generales --- */
+        :root {
+            --color-primario: #1A4D2E; /* Verde oscuro principal */
+            --color-secundario: #F5EFE6; /* Crema claro para texto y fondos suaves */
+            --color-acento: #FF9F29; /* Un toque cálido opcional para botones o alertas */
+            --color-texto-claro: #F5EFE6;
+            --color-texto-oscuro: #333333;
+            --fuente-titulos: 'Georgia', 'Times New Roman', serif; /* Fuente elegante */
+            --fuente-cuerpo: 'Arial', sans-serif; /* Fuente legible para el cuerpo */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en enlaces internos */
+        }
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto-oscuro);
+            background-color: #ffffff; /* Fondo general blanco o muy claro */
+            line-height: 1.6;
+        }
+
+        /* --- Encabezado --- */
+        header.portada {
+           background-image: url("imagenes-esencia-y-ciencia/portada-B.jpg"); /*
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+
+           )
+        }
+
+
+        header.portada h1 {
+            font-family: var(--fuente-titulos);
+            font-size: 4rem; /* Tamaño grande y llamativo */
+            font-weight: bold;
+            font-style: italic; /* Toque elegante */
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra sutil para resaltar */
+        }
+
+         /* --- Navegación Principal (Opcional si las secciones son la navegación) --- */
+        /* Si quieres una barra de navegación separada, puedes añadirla aquí */
+
+        /* --- Contenedor Principal --- */
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* --- Estilo de las "Ventanas" o Secciones --- */
+        section {
+            margin-bottom: 2.5rem;
+            padding: 2rem;
+            background-color: #f9f9f9; /* Fondo suave para secciones generales */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        section.info-destacada {
+            background-color: var(--color-primario); /* Verde oscuro para las ventanas solicitadas */
+            color: var(--color-texto-claro);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        section h2 {
+            font-family: var(--fuente-titulos);
+            font-size: 2rem;
+            color: var(--color-primario); /* Títulos de sección en verde oscuro */
+            margin-bottom: 1rem;
+            text-align: center;
+            border-bottom: 2px solid var(--color-primario);
+            padding-bottom: 0.5rem;
+        }
+
+        section.info-destacada h2 {
+            color: var(--color-texto-claro); /* Títulos claros sobre fondo oscuro */
+            border-bottom: 2px solid var(--color-texto-claro);
+        }
+
+        section p, section ul {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        section ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+        }
+
+        /* Estilo específico para "Quiénes Somos" */
+        #quienes-somos h3 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-primario);
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Botones y Enlaces como Botones --- */
+        .boton, button[type="submit"] {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: var(--color-texto-claro);
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-family: var(--fuente-cuerpo);
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .boton:hover, button[type="submit"]:hover {
+            background-color: #2a6f47; /* Un verde ligeramente más claro al pasar el ratón */
+            transform: translateY(-2px); /* Efecto sutil de elevación */
+        }
+
+        /* --- Formulario --- */
+        #contacto-cursos {
+             background-color: var(--color-secundario); /* Fondo crema suave para el formulario */
+             color: var(--color-texto-oscuro);
+        }
+        #contacto-cursos h2 {
+             color: var(--color-primario);
+             border-bottom-color: var(--color-primario);
+        }
+
+        .formulario-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Una columna por defecto */
+            gap: 1.5rem; /* Espacio entre elementos */
+        }
+
+        @media (min-width: 768px) {
+             .formulario-grid {
+                grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas más grandes */
+             }
+             .form-grupo.mensaje, .form-grupo.submit {
+                 grid-column: 1 / -1; /* Hacer que mensaje y botón ocupen todo el ancho */
+             }
+        }
+
+
+        .form-grupo label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+
+        .form-grupo input[type="text"],
+        .form-grupo input[type="email"],
+        .form-grupo input[type="tel"],
+        .form-grupo input[type="date"],
+        .form-grupo textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: var(--fuente-cuerpo);
+            font-size: 1rem;
+        }
+
+        .form-grupo input:focus, .form-grupo textarea:focus {
+            outline: none;
+            border-color: var(--color-primario);
+            box-shadow: 0 0 5px rgba(26, 77, 46, 0.3);
+        }
+
+         .form-grupo.submit {
+            text-align: center;
+         }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            background-color: var(--color-texto-oscuro);
+            color: var(--color-texto-claro);
+            font-size: 0.9rem;
+        }
+
+        /* --- Clases Utilitarias --- */
+        .text-center {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="portada">
+        <h1>Esencia y Ciencia</h1>
+        <p style="font-size: 1.2rem;">Descubre el poder de la naturaleza para tu bienestar integral</p>
+    </header>
+
+    <div class="container">
+
+        <section id="quienes-somos">
+            <h2>Quiénes Somos</h2>
+            <p>Somos una empresa comprometida con la salud y el bienestar natural impartiendo conocimientos y experiencias en el uso y tratamientos con plantas medicinales. Te enseñamos diversas formas de usarlas y tratamientos diversos para procesarlas, incluyendo la fascinante destilación de aceites esenciales y la elaboración de extractos diversos, entre ellos las tinturas.</p>
+            <p>Descubre cómo aplicar las plantas en la elaboración de cosmética natural, incluyendo la creación de jabones artesanales únicos. También te guiamos en los cuidados para tus cultivos y técnicas de siembra y reproducción, ¡incluso cómo crear tu propio huerto urbano!</p>
+            <p>Además, compartimos nuestras experiencias y vivencias de muchos años de nuestro acercamiento a la naturaleza, plantas, animales, insectos y todo nuestro entorno. Creemos firmemente que esta conexión puede llevar a las personas a una sanación integral, abordando especialmente los problemas emocionales desde una perspectiva natural y consciente.</p>
+
+            <h3>Nuestra Visión</h3>
+            <p>Ser un referente en educación y productos naturales, promoviendo un estilo de vida saludable y consciente basado en la ciencia y la tradición herbolaria, inspirando a las personas a reconectar con la naturaleza para mejorar su calidad de vida.</p>
+        </section>
+
+        <section id="productos" class="info-destacada">
+            <h2>Nuestros Productos</h2>
+            <p>Explora nuestra cuidada selección de productos naturales, elaborados con ingredientes puros y técnicas respetuosas. Desde aceites esenciales hasta cosmética artesanal, cada artículo está pensado para tu bienestar.</p>
+            <ul>
+                <li>Aceites Esenciales Puros (Lavanda, Romero, Menta...)</li>
+                <li>Tinturas Herbales Concentradas</li>
+                <li>Jabones Artesanales con ingredientes botánicos</li>
+                <li>Kits para iniciar tu propio huerto medicinal</li>
+                <li>Extractos Naturales para el cuidado personal</li>
+            </ul>
+            <p>¡Siente la diferencia de lo auténticamente natural!</p>
+             <a href="#tienda" class="boton" style="background-color: var(--color-secundario); color: var(--color-primario);">Ver Tienda</a>
+        </section>
+
+        <section id="cursos" class="info-destacada">
+            <h2>Nuestros Cursos</h2>
+            <p>Sumérgete en el fascinante mundo de las plantas medicinales y la cosmética natural con nuestros cursos prácticos y enriquecedores. Aprende de expertos y transforma tu relación con la naturaleza.</p>
+            <ul>
+                <li>Taller de Destilación de Aceites Esenciales</li>
+                <li>Curso de Elaboración de Tinturas y Extractos</li>
+                <li>Introducción a la Cosmética Natural Casera</li>
+                <li>Creación y Mantenimiento de Huertos Urbanos Medicinales</li>
+                <li>Elaboración de Jabones Artesanales (Saponificación en frío)</li>
+            </ul>
+            <p>¡Inscríbete hoy y empieza a crear tus propias maravillas naturales!</p>
+             <a href="#contacto-cursos" class="boton" style="background-color: var(--color-secundario); color: var(--color-primario);">Inscríbete o pide más info</a>
+        </section>
+
+        <section id="servicios" class="info-destacada">
+            <h2>Nuestros Servicios</h2>
+            <p>Además de nuestros productos y cursos, ofrecemos servicios personalizados para ayudarte a integrar el bienestar natural en tu vida o negocio:</p>
+            <ul>
+                <li>Asesorías personalizadas sobre uso de plantas medicinales.</li>
+                <li>Diseño e implementación de huertos medicinales (hogares, comunidades, escuelas).</li>
+                <li>Talleres privados o corporativos sobre bienestar natural y manejo del estrés.</li>
+                <li>Consultoría para emprendedores en el área de productos naturales.</li>
+            </ul>
+            <p>Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus metas de salud y bienestar.</p>
+             <a href="#contacto-cursos" class="boton" style="background-color: var(--color-secundario); color: var(--color-primario);">Contáctanos</a>
+        </section>
+
+        <section id="tienda" class="info-destacada">
+            <h2>Tienda Online</h2>
+            <p>¡Próximamente! Estamos trabajando para ofrecerte una experiencia de compra fácil y segura donde podrás adquirir todos nuestros productos directamente.</p>
+            <p>Mientras tanto, puedes contactarnos para realizar tus pedidos o consultar nuestro catálogo.</p>
+             <a href="#contacto-cursos" class="boton" style="background-color: var(--color-secundario); color: var(--color-primario);">Consultar Catálogo / Hacer Pedido</a>
+        </section>
+
+         <section id="contacto-cursos">
+             <h2>Contacta con Nosotros y Agenda tu Curso</h2>
+             <p class="text-center">¿Interesado en nuestros cursos, productos o servicios? Déjanos tus datos y nos pondremos en contacto contigo a la brevedad. Si te interesa un curso, puedes seleccionar una fecha de inicio tentativa.</p>
+
+             <form id="miFormulario" class="formulario-grid">
+                 <div class="form-grupo">
+                     <label for="nombre">Nombre Completo:</label>
+                     <input type="text" id="nombre" name="nombre" required placeholder="Escribe tu nombre aquí">
+                 </div>
+                 <div class="form-grupo">
+                     <label for="telefono">Teléfono:</label>
+                     <input type="tel" id="telefono" name="telefono" required placeholder="Tu número de teléfono">
+                 </div>
+                 <div class="form-grupo">
+                     <label for="email">Correo Electrónico:</label>
+                     <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+                 </div>
+                  <div class="form-grupo">
+                     <label for="fecha-curso">Fecha deseada para curso (Opcional):</label>
+                     <input type="date" id="fecha-curso" name="fecha-curso">
+                 </div>
+                 <div class="form-grupo mensaje">
+                    <label for="mensaje">Tu mensaje o consulta:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas o qué curso te interesa..."></textarea>
+                 </div>
+
+                 <div class="form-grupo submit">
+                    <button type="submit" class="boton">Enviar Información</button>
+                 </div>
+             </form>
+             <div id="mensaje-confirmacion" style="margin-top: 1rem; text-align: center; color: var(--color-primario); font-weight: bold;"></div>
+        </section>
+
+    </div> <footer>
+        <p>&copy; 2025 Esencia y Ciencia. Todos los derechos reservados.</p>
+        <p>Promoviendo Salud y Bienestar Natural con Conciencia.</p>
+        </footer>
+
+    <script>
+        // --- JavaScript para funcionalidad básica ---
+
+        // 1. Manejo del envío del formulario
+        const formulario = document.getElementById('miFormulario');
+        const mensajeConfirmacion = document.getElementById('mensaje-confirmacion');
+
+        formulario.addEventListener('submit', function(evento) {
+            evento.preventDefault(); // Evita que el formulario se envíe de la forma tradicional (recargando la página)
+
+            // Aquí recolectarías los datos del formulario
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const email = document.getElementById('email').value;
+            const fecha = document.getElementById('fecha-curso').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            console.log('Formulario Enviado:');
+            console.log('Nombre:', nombre);
+            console.log('Teléfono:', telefono);
+            console.log('Email:', email);
+            console.log('Fecha Curso:', fecha || 'No especificada');
+             console.log('Mensaje:', mensaje);
+
+            // --- IMPORTANTE ---
+            // En una aplicación real, aquí es donde enviarías los datos a un servidor
+            // usando fetch() o XMLHttpRequest para procesarlos (guardarlos en una base de datos, enviar un email, etc.)
+            // Ejemplo básico con fetch (requiere un endpoint en tu servidor):
+            /*
+            fetch('/api/contacto', { // Reemplaza '/api/contacto' con tu endpoint real
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ nombre, telefono, email, fecha, mensaje }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Respuesta del servidor:', data);
+                mensajeConfirmacion.textContent = `¡Gracias ${nombre}! Hemos recibido tu información. Nos pondremos en contacto pronto.`;
+                formulario.reset(); // Limpia el formulario
+            })
+            .catch((error) => {
+                console.error('Error al enviar formulario:', error);
+                mensajeConfirmacion.textContent = 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.';
+                mensajeConfirmacion.style.color = 'red';
+            });
+            */
+
+            // --- Simulación para este ejemplo ---
+            // Muestra un mensaje de confirmación simple en la página
+            mensajeConfirmacion.textContent = `¡Gracias ${nombre}! Hemos recibido tu información. Nos pondremos en contacto contigo pronto.`;
+            mensajeConfirmacion.style.color = 'var(--color-primario)'; // Verde confirmación
+
+            // Opcional: Limpiar el formulario después de enviarlo
+            formulario.reset();
+
+             // Opcional: Ocultar el mensaje después de unos segundos
+             setTimeout(() => {
+                mensajeConfirmacion.textContent = '';
+             }, 7000); // 7 segundos
+        });
+
+        // 2. Opcional: Añadir validación de fecha mínima para el curso (que no sea en el pasado)
+        const inputFecha = document.getElementById('fecha-curso');
+        if (inputFecha) {
+            const hoy = new Date();
+            const anio = hoy.getFullYear();
+            let mes = hoy.getMonth() + 1; // getMonth() es 0-indexado
+            let dia = hoy.getDate();
+
+            // Formato YYYY-MM-DD requerido por el input date
+            if (mes < 10) mes = '0' + mes;
+            if (dia < 10) dia = '0' + dia;
+
+            const fechaMinima = `${anio}-${mes}-${dia}`;
+            inputFecha.setAttribute('min', fechaMinima);
+        }
+
+    </script>
+
+</body>
+</html>
